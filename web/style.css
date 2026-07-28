@@ -1,0 +1,316 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 23, 2026, 2:38:28 PM
+    Author     : BETTY DLADLA
+*/
+
+/* ============================================================
+   PPE Trading Checklist — "Private Members' Club" theme
+   Dark, minimal, gold accent, subtle ambient glow.
+   ============================================================ */
+
+:root {
+    --bg: #08090B;
+    --panel: #121316;
+    --panel-border: #232427;
+    --hairline: #1C1D20;
+    --text: #F2F0EA;
+    --text-dim: #8C8D92;
+    --text-faint: #55565B;
+    --gold: #C9A24B;
+    --gold-soft: rgba(201, 162, 75, 0.35);
+    --ok: #4FAE83;
+    --warn: #D9A441;
+    --caution: #D9803C;
+    --hold: #C1503E;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        radial-gradient(ellipse 900px 500px at 50% -10%, rgba(201, 162, 75, 0.08), transparent 60%),
+        var(--bg);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 56px 16px 80px;
+    letter-spacing: 0.01em;
+}
+
+.wrap {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* ---- Wordmark / masthead ---- */
+
+.wordmark {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: var(--text);
+    margin-bottom: 6px;
+    text-indent: 0.4em; /* optically re-center after big letter-spacing */
+}
+
+.subwordmark {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'Courier New', monospace;
+    margin-bottom: 6px;
+}
+
+.subwordmark::before,
+.subwordmark::after {
+    content: '';
+}
+
+h1 {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin: 0 0 40px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ---- Panels / sections ---- */
+
+.section {
+    border: 1px solid var(--panel-border);
+    background: var(--panel);
+    margin-bottom: 16px;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.section-score {
+    color: var(--gold);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--hairline);
+    gap: 16px;
+    transition: background 0.15s ease;
+}
+
+.item-row:hover {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.item-q {
+    flex: 1;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text-dim);
+    font-weight: 400;
+}
+
+/* ---- Radio controls ---- */
+
+.radio-group {
+    display: flex;
+    gap: 4px;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-faint);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: 'Courier New', monospace;
+    margin-right: 4px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border: 1px solid var(--panel-border);
+    border-radius: 2px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.radio-group label:hover {
+    border-color: var(--gold-soft);
+    color: var(--text);
+}
+
+.radio-group input[type="radio"] {
+    accent-color: var(--gold);
+    width: 12px;
+    height: 12px;
+    margin: 0;
+}
+
+/* ---- Buttons / links ---- */
+
+.submit-btn, .link-btn {
+    display: block;
+    margin: 28px auto;
+    padding: 14px 36px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+    border-radius: 2px;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover, .link-btn:hover {
+    background: var(--gold);
+    color: #0A0A0C;
+    box-shadow: 0 0 24px var(--gold-soft);
+}
+
+/* ---- Score / verdict display ---- */
+
+.score-display {
+    text-align: center;
+    margin: 8px 0 40px;
+    padding: 40px 20px;
+    border: 1px solid var(--panel-border);
+    background:
+        radial-gradient(ellipse 400px 200px at 50% 0%, var(--gold-soft), transparent 70%),
+        var(--panel);
+    border-radius: 2px;
+}
+
+.score-number {
+    font-size: 64px;
+    font-weight: 200;
+    color: var(--text);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.score-max {
+    font-size: 12px;
+    color: var(--text-faint);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.15em;
+    margin-top: 4px;
+}
+
+.band {
+    text-align: center;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+    margin-top: 18px;
+}
+
+.band-note {
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 13px;
+    max-width: 380px;
+    margin: 10px auto 0;
+    line-height: 1.6;
+}
+
+.band-CLEARED { color: var(--ok); }
+.band-REVIEW { color: var(--warn); }
+.band-CAUTION { color: var(--caution); }
+.band-HOLD { color: var(--hold); }
+
+/* ---- History table ---- */
+
+table.history {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+}
+
+table.history th, table.history td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--hairline);
+    text-align: left;
+}
+
+table.history th {
+    color: var(--text-faint);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+}
+
+table.history tr:hover td {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+table.history td:nth-child(2) {
+    font-family: 'Courier New', monospace;
+    color: var(--gold);
+}
